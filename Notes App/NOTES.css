@@ -1,0 +1,254 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #202020;
+}
+::selection{
+  color: #fff;
+  background: #618cf8;
+}
+.NOTES{
+  width:78%;
+  margin: 0 auto;
+}
+.NOTES .wrapperNote{
+  margin: 50px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, 265px);
+}
+.NOTES .wrapperNote li{
+  height: 250px;
+  list-style: none;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 20px 20px;
+  background: rgb(51, 51, 51);
+  box-shadow: 0 0px 18px  rgba(5, 90, 86, 0.671);
+}
+.NOTES .add-box, .icon, .bottom-content, 
+.NOTES .popup, header, .settings .menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.NOTES .add-box{
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+}
+.NOTES .add-box .icon{
+  height: 78px;
+  width: 78px;
+  color: #af2424;
+  font-size: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  border: 2px dashed #af2424;
+}
+.NOTES .add-box p{
+  color: #af2424;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.NOTES .note{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.NOTES .note .details{
+  max-height: 165px;
+  overflow-y: auto;
+}
+.NOTES .note .details::-webkit-scrollbar,
+.NOTES .popup textarea::-webkit-scrollbar{
+  width: 0;
+}
+.NOTES .note .details:hover::-webkit-scrollbar,
+.NOTES .popup textarea:hover::-webkit-scrollbar{
+  width: 5px;
+}
+.NOTES .note .details:hover::-webkit-scrollbar-track,
+.NOTES .popup textarea:hover::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.NOTES .note .details:hover::-webkit-scrollbar-thumb,
+.NOTES .popup textarea:hover::-webkit-scrollbar-thumb{
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+.NOTES .note p{
+  font-size: 22px;
+  font-weight: 500;
+}
+.NOTES .note span{
+  display: block;
+  color: #ebebeb;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.NOTES .note .bottom-content{
+  padding-top: 10px;
+  border-top: 1px solid rgb(146, 103, 103);
+}
+.NOTES .bottom-content span{
+  color: #afaeae;
+  font-size: 14px;
+}
+.NOTES .bottom-content .settings{
+  position: relative;
+}
+.NOTES .bottom-content .settings i{
+  color: #b96868;
+  cursor: pointer;
+  font-size: 15px;
+}
+.NOTES .settings .menu{
+  z-index: 1;
+  bottom: 0;
+  right: -5px;
+  padding: 5px 0;
+  background: inherit;
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.NOTES .settings.show .menu{
+  transform: scale(1);
+}
+.NOTES .settings .menu li{
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+  justify-content: flex-start;
+}
+.NOTES .menu li:last-child{
+  margin-bottom: 0;
+}
+.NOTES .menu li:hover{
+  background: #864343;
+}
+.NOTES .menu li i{
+  padding-right: 8px;
+}
+
+.NOTES .popup-box{
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+.NOTES .popup-box .popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+.NOTES .popup-box, .popup{
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+.NOTES .popup-box.show, .popup-box.show .popup{
+  opacity: 1;
+  pointer-events: auto;
+}
+.NOTES .popup-box.show .popup{
+  transform: translate(-50%, -50%) scale(1);
+}
+.NOTES .popup .content{
+  border-radius: 15px;
+  background: #333;
+  width: calc(100% - 15px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.NOTES .content header{
+  padding: 15px 25px;
+  border-bottom: 1px solid rgb(182, 51, 51);
+}
+.NOTES .content header p{
+  font-size: 20px;
+  font-weight: 500;
+}
+.NOTES .content header i{
+  color: #a73030;
+  cursor: pointer;
+  font-size: 23px;
+}
+.NOTES .content form{
+  margin: 15px 25px 35px;
+}
+.NOTES .content form .row{
+  margin-bottom: 20px;
+}
+.NOTES form .row label{
+  font-size: 18px;
+  display: block;
+  margin-bottom: 6px;
+}
+.NOTES form :where(input, textarea){
+  color: white;
+  height: 50px;
+  background-color: #3b3a3a;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid rgb(170, 168, 168);
+}
+.NOTES form :where(input, textarea):focus{
+  box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+}
+.NOTES form .row textarea{
+  height: 150px;
+  resize: none;
+  padding: 8px 15px;
+}
+.NOTES form button{
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 4px;
+  background: #3a3d44;
+}
+
+@media (max-width: 660px){
+  .wrapperNote{
+    margin: 15px;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+  .popup-box .popup{
+    max-width: calc(100% - 15px);
+  }
+  .bottom-content .settings i{
+    font-size: 17px;
+  }
+}
