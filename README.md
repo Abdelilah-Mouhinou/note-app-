@@ -1,2 +1,2 @@
-# note-app-
+# note-app
 note web app
